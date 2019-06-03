@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const mongoConnect = require('./util/database').mongoConnect;
 const adminRoute = require('./routes/admin');
-//const shopRoute = require('./routes/shop');
+const shopRoute = require('./routes/shop');
 const productController = require('./controllers/error');
 
 
@@ -26,7 +26,7 @@ app.use((req, res, next)=>{
 });
 
 app.use('/admin', adminRoute);
-//app.use(shopRoute);
+app.use(shopRoute);
 app.use(productController.get404);
 
 
